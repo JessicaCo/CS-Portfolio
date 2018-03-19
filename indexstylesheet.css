@@ -1,0 +1,90 @@
+body {
+    font:1em garamond;
+    background-image: url(images/elephants.jpg);
+}
+
+.main #about{
+    list-style: none;
+    transition:3s;
+    color: black;
+    font-size: 3em;
+    font-family: garamond;
+    text-align: center;
+}
+
+.main:hover li{
+    transform: rotatey(360deg);
+}
+
+#green {
+    border: 10px solid #53BC84;
+    border-style: ridge;
+    padding: 15px;
+    background-color: rgba(247, 247, 247, .5);
+}
+
+#overview h1 {
+    background-color: #53BC84;
+}
+
+.container {
+    display: inline-block;
+    width: 47%;
+    vertical-align: top;
+    padding-right: 27px;
+    padding-left: 10px;
+}
+    
+
+.smallcontainer img {
+    display: inline-block;
+    width: 47%;
+}
+
+#smallercontainer img {
+    display: inline-block;
+    /*width: 47%;*/
+}
+
+#othersmallercontainer img {
+    display: inline-block;
+    /*width: 47%;*/
+}
+
+.contain {
+    /*display: inline-block;*/
+    width: 45%;
+    vertical-align: top;
+    padding: 15px;
+    border: 10px #53BC84;
+    border-style: ridge;  
+    height: 450px;
+    display: table-cell; 
+    background-color: rgba(247, 247, 247, .5);
+}
+
+.example {
+    border: 10px solid #53BC84;
+    border-style: ridge;
+    background-color: rgba(247, 247, 247, 0.5);
+}
+
+.ex {
+    display: inline-block;
+    /*width: 49%;*/
+    vertical-align: top;
+    width:auto;
+    margin: 4px;
+    border: 2px solid #53BC84;
+}
+
+.thinking {
+     border: 10px solid #53BC84; 
+     border-style: ridge; 
+     margin-left:175px; 
+     margin-right: 175px; 
+     padding: 7px;
+     text-align: center;
+     background-color: rgba(247, 247, 247, 0.5);
+}
+

@@ -1,0 +1,20 @@
+ul {
+    padding: 50px;
+    margin: 0;
+    border: 10px solid black;
+    display: inline-block;
+    background: #dee6f2;
+}
+
+ul li {
+    list-style: none;
+    color: black;
+    font-size: 6em;
+    font-family: garamond;
+    transition: 2s;
+    text-align: center
+}
+
+ul:hover li {
+    transform: rotatey(360deg);
+}

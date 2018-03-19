@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generative Art How-to</title>
+    <link rel="stylesheet" href="indexstylesheet.css" type="text/css">
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <script src="int2checkpoints/processing.min.js"></script>
+    <style>
+        h2 { 
+            text-align: center;
+            border: solid #53BC84;
+            background-color: #53BC84;
+            width: 1095px; 
+            margin-left: 125px;
+            margin-right: 125px;
+        }
+        h3 {
+            text-align: center;
+        }
+        body {
+            text-align: center;
+        }
+        .trio {
+            display: inline-block;
+            width: 23.8%;
+            vertical-align: top;
+            border: 5px solid #49a373; 
+            height: 780px;
+            margin: 6px;
+            border-style: dotted;
+            border-width: 5px;
+            padding: 12px;
+            background-color: rgba(247, 247, 247, 0.7);
+            }
+        .trio h4{
+            text-align: left;
+        }
+        .special {
+            background-color: rgba(247, 247, 247, 0.7);
+            border: 5px solid  #49a373;
+            border-style: dotted;
+            width: 1040px;
+            margin-left: 126px;
+            margin-right: 126px;
+            padding: 25px;
+        }
+        .duo {
+            display: inline-block;
+            width: 37.5%;
+            vertical-align: top;
+            border: 5px solid #49a373; 
+            height: 450px;
+            margin: 6px;
+            border-style: dotted;
+            padding: 12px;
+            background-color: rgba(247, 247, 247, 0.7);
+            border-width: 5px;
+        }
+        
+        .duoBottom {
+            display: inline-block;
+            width: 37.5%;
+            vertical-align: top;
+            border: 5px solid #49a373; 
+            height: 250px;
+            margin: 6px;
+            border-style: dotted;
+            padding: 12px;
+            background-color: rgba(247, 247, 247, 0.7);
+            border-width: 5px;
+        }
+        .steps {
+            border: 5px solid #49a373; 
+            margin: 6px;
+            border-style: dotted;
+            padding: 12px;
+            background-color: rgba(247, 247, 247, 0.7);
+            border-width: 5px;
+            margin-left: 126px;
+            margin-right: 126px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+            <ul>
+                <li align="center" id="about"><strong>Generative Art How-To</strong></li>
+            </ul>
+            <ul class="navbar">
+                <a href="index.html"><li><strong>About Me</strong></li></a>
+                <a href="how-to.html"><li><Strong>How-To</Strong></li></a>
+                <a href="arthow-to.html"><li><strong>Generative Art How-To</strong></li></a>
+            </ul>
+    </div>
+    
+    <div align="center">
+        <canvas id="output-canvas"></canvas>
+        <script src="ladybug.js"></script>
+    </div>
+    
+    <div>
+        <h2>What I Made and How it Works</h2>
+        <p class="special">I created a generative art page that has an ant going across the screen and 
+        ladybugs appearing onclick <br> in a nature setting. I did this by using functions, 
+        loops, conditionals, and other tools from JavaScript processing.<br> Try clicking on the generative art above!</p>
+    </div>
+    <div>
+        <h2>Specifics of the Code</h2>
+            <div class="trio">
+                <h3>CONDITIONALS</h3>
+                    <h4>If/Else statements:</h4>
+                    <p>If/else statements make code run based off of whether a certain <em>condition</em> is true or false. 
+                    I used if/else statements to animate the ant and have it keep moving across the screen on a loop.</p>
+                    <img src="images/jsAnt.png" alt="code used to create and animate the ant">
+                    <p>The first part of the code uses an if statement to draw the ant and make it move from one side of the screen to the other, 
+                    saying, "if the x position is less than the width of the canvas, then keep moving the ant." The next part 
+                    of the code uses a else if statement to reset the ant back to the left side of the screen once the ant reaches the end of the 
+                    canvas, saying, "if the x position of the ant is greater than the width, then set the x back to 0."</p>
+            </div>
+            <div class="trio">
+                <h3>FUNCTIONS</h3>
+                    <p>Functions are used to run a code of block when called. For my project, I used functions that were already part of processing and 
+                    functions that I created myself.<br></p>
+                    <h4>Processing function:</h4>
+                    <img src="images/mouseClicked.png" alt="image of the code I used to make a ladybug appear onclick" width="99%">
+                    <p>I used this code to make a ladybug appear when the function was called. The function was called every time the mouse was clicked.</p>
+                    <h4>My function:</h4>
+                    <img src="images/ladybug1.png" alt="image of the code I used to draw the ladybug" width="99%">
+                    <p>I used this code to draw the ladybug when the function was called. This function was called within the mouseClicked function, in order 
+                    to make a ladybug be drawn when the mouse was clicked. </p>
+            </div>
+            <div class="trio">
+                <h3>LOOPS</h3>
+                <p>There are two main types of loops: for loops and while loops. One of the limitations of the program we were using was that while loops would 
+                crash c9 because it went on forever, so I only used for loops. I used a for loop to draw a ladybug when the mouse was clicked and keep the ladybug 
+                on the screen. Here is an image of the code I used:</p>
+                <img src="images/loop.png" alt="code I used to create a for loop" width="99%">
+                    <h4>initiator:</h4>
+                    <p>My initiator is <strong>i=0</strong>. The initiator simply declares the value of the variable used in the for loop.</p>
+                    <h4>condition:</h4>
+                    <p>My condition is <strong>i&lt;ladybugs.length</strong>. This sets the condition that allows the for loop to run the codeblock. It makes sure that i is less than 
+                    the length of the array. If it isn't true, then the loop will not continue!</p>
+                    <h4>increments:</h4>
+                    <p>My increment is <strong>i++</strong>. This adds 1 to i each time after the codeblock has been run through.</p>
+            </div>
+    </div> 
+    <div>
+        <h2>Choices Made and Why</h2>
+        <p class="special">For our generative art page, we had the freedom to create anything we wanted as long as we met the following requirments: at least 1 loop, at least 1 conditional, 
+        at least 1 function we created ourselves, and 1 way to interact. Because there weren't many guidelines, we had a lot of choices to make! The following is a quick summary of what I did 
+        for each requirement and why I did it:</p>
+            <div class="duo">
+                <h3>Function</h3>
+                <p>One of the most important parts of my generative art page is my ladybug function because it is what actually draws the ladybug. I chose to make a function that draws 
+                the ladybug so that, when I create the code to make the ladybug appear, I could simply call the ladybug function. I chose to make a ladybug because it is a very geometric 
+                insect in that I could sufficiently represent it using simple shapes that are available to me in JS Processing. Here is an image of what the ladybug function drew on a 
+                white background:</p>
+                <img src="https://tinyurl.com/y79hpguv" width="80%" alt="image of ladybug on white background">
+            </div>
+            <div class="duo">
+                <h3>Interaction</h3>
+                <p>Once I had my ladubug function done, I had to figure out what the viewer would have to do when they saw it. I was really inspired by our final checkpoint that showed us 
+                how to make a drawing of our own appear on click (to see a my project checkpoint click <a href=int2checkpoints/func.html>here</a>), so I decided that I will utilize the mouseClicked function offered in JS Processing
+                to make my ladybug appear on click. Here is a gif of the ladybug function at work with the mouseClicked function:</p>
+                <img src="https://tinyurl.com/babbyflaysgif1" width="99%" alt="gif of ladybugs appearing on click">
+            </div>
+            <div class="duoBottom">
+                <h3>Conditional</h3>
+                <p>Now that my ladybug was appearing at the click of the mouse, I felt like it was still missing something. At first, I tried making a loop that created a line of black dots to 
+                represent ants going across the nature scene, but it didn't feel quite right. So, I instead decided to animate a single ant going across the screen to create movenment because 
+                I realized that the page lacked movement. I used a loop to make sure that the ant would reset to the left side of the screen once it reached the right side of the screen, keeping it travelling constantly.
+                This, however, lead to problems with keeping my ladybugs appearing ( which I will explain in depth later), but I was able to fix that with the use of objects, arrays, for loops, and Mr. Hesby :)</p>
+            </div>
+            <div class="duoBottom">
+                <h3>Loop</h3>
+                <p>As previously mentioned, keeping my ladybug on the screen required arrays, objects, and a for loop. Luckily I had not had an idea as to what to create that would use a for loop yet,
+                so, in a way, the ladybug issue worked to my advantage. I had two options at that point: come up with another way to use a for loop or leave it as is with the ladybug code requiring the 
+                use of a for loop. Due to the page looking a bit crowded already, and to avoid creating any more arrays, I decided that it would be best to keep the simple theme and leave it as is.</p>
+            </div>
+    </div>
+    <div>
+        <h2>Something to Remember</h2>
+        <p class="special">While making this generative art page, there were many obstacles to overcome, but the biggest obstacle that offered a huge learning experience by far was my ant/ladybug problem that required 
+        creating an array so that every element of my page would function properly. Here is a walkthrough of what the problem was and what were the steps I took to solve it.</p>
+            <div class="steps">
+                <h3>The Problem</h3>
+                <p>As mentioned earlier, adding an animation with the ant caused a problem: my ladybugs would appear but they would immediatly get drawn over by the background. The solution to this was to create an array 
+                for the ladybugs so that each time one was drawn, they would be assigned their own coordinates and be their own individual object that would continue to be drawn over the background. This, however, was easier
+                said than done. Here is a breakdown of the steps I took to solve the problem</p>
+            </div>
+            <div class="steps">
+                <h3>Step 1: Creating an Array</h3>
+                <p>The first step is to create an array at the top of your code. It should look like this:</p>
+                <p style="font-size: 20px; color:#4ca576"><strong>var ladybugs=[];</strong></p>
+                <p>"ladybugs" is the name that I used--you can replace it with your own when you are creating your own array. Some terms you will want to take note of later are that "myArr<strong>.length</strong>" finds the 
+                length of the array, and "mrArr<strong>.push</strong>" pushes something into the end of the array.</p>
+            </div>
+            <div class="steps">
+                <h3>Step 2: Push on mouseClicked</h3>
+                <p>Next, you need to go to your mouseClicked function and write the following code:</p>
+                <p style="font-size: 20px; color:#4ca576">ladybugs<strong>.push</strong>({x:mouseX, y: mouseY, angle: random(6.28)});</p>
+                <p>I have "angle" as a third parameter because I wanted the ladybug to be facing a random spot everytime instead of all of them facing the same direction. If you don't want/need yours to be rotating, then 
+                only need the first two parameters for the x and y position. Another thing to remember: rotation is measured with radians (which is why the value in "random()" is 6.28. Don't forget the curly brackets.</p>
+            </div>
+            <div class="steps">
+                <h3>Step 3: Creating a For Loop</h3>
+                <p>The final step is creating a for loop inside your draw function that will draw ladybugs at the designated x, y, and rotated from the objects in the array. The code I used looked like this:</p>
+                <p style="font-size: 20px; color:#4ca576">for(var i=0; i&lt;ladybugs<strong>.length</strong>; i++){ladybug(   ladybugs[i].x, ladybugs[i].y, ladybugs[i].angle   );}</p>
+                <p>You may have some extra problems specific to your own code, as I did, especially if it is your first time using arrays. Other than that, you're done!</p>
+            </div>
+    </div>
+    <div>
+        <h2>Next Steps</h2>
+        <p class="special">If I had more time, I would learn how to make multiple ants go across the screen, and learn how to make one follow the mouse. I would also see if there was a way to make the lady bugs move once they are generated.
+        The final thing that I would try to do is allow the viewer to press a button on the keyboard to change the setting from day to night and vise versa.</p>
+    </div>
+</body>
+
+</html>

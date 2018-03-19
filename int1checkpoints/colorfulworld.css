@@ -1,0 +1,27 @@
+body {
+    background-color: beige;
+    margin: auto;
+    width:1000px;
+}
+p {
+    color:saddlebrown;
+}
+body {
+    text-align: center;
+}
+.sushi {
+    color: saddlebrown;
+}
+.elephants {
+    color: saddlebrown;
+}
+#thingstitle {
+    color: saddlebrown;
+    font-weight: 600;
+}
+img {
+    margin: 20px;
+}
+.images {
+    border: 5px solid saddlebrown;
+}
