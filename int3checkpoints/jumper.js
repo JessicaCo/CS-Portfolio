@@ -1,0 +1,1 @@
+var jumper=document.getElementById
