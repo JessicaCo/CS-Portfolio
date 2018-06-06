@@ -1,22 +1,23 @@
 body {
-    font:1em garamond;
+    font-family: 'Playfair Display', serif;
     background-image: url(images/elephants.jpg);
 }
 
-.main #about{
+.main #about {
     list-style: none;
-    transition:3s;
+    transition: 3s;
     color: black;
     font-size: 3em;
     font-family: garamond;
     text-align: center;
 }
 
-.main:hover li{
+.main:hover li {
     transform: rotatey(360deg);
 }
 
 #green {
+    display: inline-block;
     border: 10px solid #53BC84;
     border-style: ridge;
     padding: 15px;
@@ -34,7 +35,10 @@ body {
     padding-right: 27px;
     padding-left: 10px;
 }
-    
+
+.container h2 {
+    width: 47%;
+}
 
 .smallcontainer img {
     display: inline-block;
@@ -43,23 +47,23 @@ body {
 
 #smallercontainer img {
     display: inline-block;
-    /*width: 47%;*/
+    width: 47%;
 }
 
 #othersmallercontainer img {
     display: inline-block;
-    /*width: 47%;*/
+    width: 47%;
 }
 
 .contain {
-    /*display: inline-block;*/
+    display: inline-block;
     width: 45%;
     vertical-align: top;
     padding: 15px;
     border: 10px #53BC84;
-    border-style: ridge;  
+    border-style: ridge;
     height: 450px;
-    display: table-cell; 
+    display: table-cell;
     background-color: rgba(247, 247, 247, .5);
 }
 
@@ -71,20 +75,95 @@ body {
 
 .ex {
     display: inline-block;
-    /*width: 49%;*/
+    width: 49%;
     vertical-align: top;
-    width:auto;
+    width: auto;
     margin: 4px;
     border: 2px solid #53BC84;
 }
 
 .thinking {
-     border: 10px solid #53BC84; 
-     border-style: ridge; 
-     margin-left:175px; 
-     margin-right: 175px; 
-     padding: 7px;
-     text-align: center;
-     background-color: rgba(247, 247, 247, 0.5);
+    border: 10px solid #53BC84;
+    border-style: ridge;
+    margin-left: 175px;
+    margin-right: 175px;
+    padding: 7px;
+    text-align: center;
+    background-color: rgba(247, 247, 247, 0.5);
 }
 
+h2 {
+    text-align: center;
+    border: solid #53BC84;
+    background-color: #53BC84;
+    width: 1095px;
+    margin-left: 125px;
+    margin-right: 125px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.trio {
+    display: inline-block;
+    width: 23.5%;
+    vertical-align: top;
+    border: 5px solid #49a373;
+    margin: 6px;
+    border-style: dotted;
+    border-width: 5px;
+    padding: 12px;
+    background-color: rgba(247, 247, 247, 0.7);
+}
+
+.trio h4 {
+    text-align: left;
+}
+
+.special {
+    background-color: rgba(247, 247, 247, 0.7);
+    border: 5px solid #49a373;
+    border-style: dotted;
+    width: 1040px;
+    margin-left: 126px;
+    margin-right: 126px;
+    padding: 25px;
+}
+
+.duo {
+    display: inline-block;
+    width: 37.5%;
+    vertical-align: top;
+    border: 5px solid #49a373;
+    height: 450px;
+    margin: 6px;
+    border-style: dotted;
+    padding: 12px;
+    background-color: rgba(247, 247, 247, 0.7);
+    border-width: 5px;
+}
+
+.duoBottom {
+    display: inline-block;
+    width: 37.5%;
+    vertical-align: top;
+    border: 5px solid #49a373;
+    height: 250px;
+    margin: 6px;
+    border-style: dotted;
+    padding: 12px;
+    background-color: rgba(247, 247, 247, 0.7);
+    border-width: 5px;
+}
+
+.steps {
+    border: 5px solid #49a373;
+    margin: 6px;
+    border-style: dotted;
+    padding: 12px;
+    background-color: rgba(247, 247, 247, 0.7);
+    border-width: 5px;
+    margin-left: 126px;
+    margin-right: 126px;
+}

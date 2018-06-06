@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vindinium AI Code</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="indexstylesheet.css" type="text/css">
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <script src="int2checkpoints/processing.min.js"></script>
+</head>
+<body>
+    <div class="main">
+            <ul>
+                <li align="center" id="about"><strong>Vindinium AI How-To</strong></li>
+            </ul>
+            <ul class="navbar">
+                <a href="index.html"><li><strong>About Me</strong></li></a>
+                <a href="how-to.html"><li><Strong>About Me: How-To</Strong></li></a>
+                <a href="arthow-to.html"><li><strong>Generative Art: How-To</strong></li></a>
+                <a href="interacthow-to.html"><li><strong>Interactive Art: How-To</strong></li></a>
+                <a href="vindhow-to.html"><li><strong>Vindinum AI: How-To</strong></li></a>
+                <a href="vindcode.html"><li><strong>Full Bot's Code</strong></li></a>
+            </ul>
+    </div>
+    <div class="special">
+    <code>
+        <pre>
+var Bot = require('bot');
+var PF = require('pathfinding');
+// var bot = new Bot('41zoj5rs', 'training', 'http://vind-legacy.thegrid.red'); //Put your bot's code here and change training to <br> Arena when you want to fight others.
+var bot = new Bot('pz102czb', 'arena', 'http://bgdb.hesby.io:9000'); //Put your bot's code here and change training to Arena when <br> you want to fight others.
+var goDir;
+var Promise = require('bluebird');
+Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+        //////* Write your bot below Here *//////
+        //////* Set `myDir` in the direction you want to go and then bot.goDir is set to myDir at the bottom *////////
+
+        /*                                      *
+         * This Code is global data!            *
+         *                                      */
+
+        // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is "none"
+        var myDir;
+
+        // stores my bots position in the "myPos" variable
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+
+        // stores the enemy bots into an array
+        var enemyBots = [];
+        if (bot.yourBot.id != 1) enemyBots.push(bot.bot1);
+        if (bot.yourBot.id != 2) enemyBots.push(bot.bot2);
+        if (bot.yourBot.id != 3) enemyBots.push(bot.bot3);
+        if (bot.yourBot.id != 4) enemyBots.push(bot.bot4);
+
+        // find closest bot and stores in "closestBot"
+        var closestBot = enemyBots[0];
+        for (var i = 0; i < enemyBots.length; i++) {
+            if (bot.findDistance(myPos, closestBot.posArray) > bot.findDistance(myPos, enemyBots[i].posArray)) { //if using a bot, <br>make sure to use '.posArray'
+                closestBot = enemyBots[i];
+            }
+        }
+
+        //richest = most mines; below finds the richest bot that has most mines 
+        var richestBot = enemyBots[0]; 
+        for (var i = 0; i < enemyBots.length; i++) {
+            if (enemyBots[i].mineCount > richestBot.mineCount) {
+                richestBot = enemyBots[i];
+            }
+        }
+
+        /*                                      *
+         * This Code Decides WHAT to do         *
+         *                                      */
+        var task = "none";
+
+        //sets task to health when the bot is low on health
+        if (bot.yourBot.life < 65) {
+            task = "health";
+        }
+        //makes the bot go for the richest bot's owned mines
+        else if (richestBot.mineCount >= bot.yourBot.mineCount){
+            task = "take mines";
+        }
+        //When the bot is healthy (over 81 on health) the bot will attack
+        else if (bot.yourBot.mineCount < closestBot.mineCount && bot.yourBot.life > 81) {
+            task = "attack nearest enemy bot";
+        }
+        //the default task is to get freeMines
+        else {
+            task = "freeMines";
+        }
+
+
+
+        /*                                      *
+         * This Code Determines HOW to do it    *
+         *                                      */
+
+        if (task === "none") {
+            console.log("Going Random!");
+            var rand = Math.floor(Math.random() * 4);
+            var dirs = ["north", "south", "east", "west"];
+            myDir = dirs[rand];
+        }
+        //goes to nearest free mine
+        else if (task === "freeMines") {
+            var closestMine = bot.freeMines[0];
+            for (var i = 0; i < bot.freeMines.length; i++) {
+                if (bot.findDistance(myPos, closestMine) > bot.findDistance(myPos, bot.freeMines[i])) {
+                    closestMine = bot.freeMines[i];
+                }
+            }
+            console.log("Grabbing a free mine!");
+            myDir = bot.findPath(myPos, closestMine);
+        }
+        //gets health if low
+        else if (task === "health") {
+            var closestTavern = bot.taverns[0];
+            for (var i = 0; i < bot.taverns.length; i++) {
+                if (bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos, bot.taverns[i])) {
+                    closestTavern = bot.taverns[i];
+                }
+            }
+            console.log("Low on health!");
+            myDir = bot.findPath(myPos, closestTavern);
+        }
+        //attacks nearest enemy bot
+        else if (task === "attack nearest enemy bot") {
+            console.log("attacking!");
+            myDir = bot.findPath(myPos, closestBot.posArray);
+        }
+        //attacks richest bot's mine
+        else if (task === "take mines") {
+            // claimed mine = closest claimed mine of the richest player
+            var claimedMine = richestBot.mines[0];
+            for (var i = 0; i < richestBot.mines.length; i++) {
+                if (bot.findDistance(myPos, claimedMine) > bot.findDistance(myPos, richestBot.mines[i])) {
+                    claimedMine = richestBot.mines[i];
+                }
+            }
+            console.log("Stealing a mine!");
+            myDir = bot.findPath(myPos, claimedMine);
+        }
+
+
+        /*                                                                          *
+         * This Code Sets your direction based on myDir. Change if you want.        */
+
+        bot.goDir = myDir;
+
+        ///////////* DON'T REMOVE ANTYTHING BELOW THIS LINE *//////////////
+        resolve();
+    });
+};
+bot.runGame();
+        </pre>
+    </code>
+    </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive How-To</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="indexstylesheet.css" type="text/css">
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <link rel="stylesheet" href="int3project/int3proj.css" type="text/css">
+    <style>
+        div {
+            text-align: center;
+        }
+
+        .duo {
+            height: 375px;
+        }
+
+        .duoBottom {
+            height: 550px;
+        }
+
+        .trio {
+            height: 610px;
+        }
+
+        .duo {
+            height: 450px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <ul>
+            <li align="center" id="about"><strong>Interactive Art How-To</strong></li>
+        </ul>
+        <ul class="navbar">
+            <a href="index.html">
+                <li><strong>About Me</strong></li>
+            </a>
+            <a href="how-to.html">
+                <li>
+                    <Strong>About Me: How-To</Strong>
+                </li>
+            </a>
+            <a href="arthow-to.html">
+                <li><strong>Generative Art: How-To</strong></li>
+            </a>
+            <a href="interacthow-to.html">
+                <li><strong>Interactive Art: How-To</strong></li>
+            </a>
+            <a href="vindhow-to.html">
+                <li><strong>Vindinum AI: How-To</strong></li>
+            </a>
+            <a href="vindcode.html">
+                <li><strong>Full Bot's Code</strong></li>
+            </a>
+        </ul>
+    </div>
+
+    <canvas id="output-canvas"></canvas>
+
+    <div id="mainButton">
+        <div id="table">
+            <p><span id="output">--select--</span> &#x25BC;</p>
+            <ul id="mainDropdown">
+                <li id="ladybug">
+                    <p>ladybug</p>
+                </li>
+                <li id="dragonfly">
+                    <p>dragonfly</p>
+                </li>
+                <li id="butterfly">
+                    <p>butterfly &#9658;</p>
+                    <ul id="sub-dropdownButterfly">
+                        <li id="orangeButterfly">orange-yellow</li>
+                        <li id="pinkButterfly">pink-purple</li>
+                    </ul>
+                </li>
+                <li id="flower">
+                    <p>flower &#9658;</p>
+                    <ul id="sub-dropdownFlower">
+                        <li id="whiteFlower">white</li>
+                        <li id="pinkFlower">pink</li>
+                        <li id="darkFlower">dark pink</li>
+                        <li id="violetFlower">violet</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>What I Made and How it Works</h2>
+        <p class="special">I recreated my <a href="arthow-to.html">generative art</a> this time incorporating the DOM. It takes the users input from the dropdown menu on the side and, based off of what the user selected, allows them to click on the art and have the item
+            appear! From butterflies to ladybugs to flowers to dragonflies, this interactive art allows for the user to create a nature scene of their choice<br> Try clicking on the generative art above! (but, of course, don't forget to select something
+            first)</p>
+    </div>
+    <div>
+        <h2>Specifics of the Code</h2>
+        <div class="trio">
+            <h3>.getElementById()</h3>
+            <p>".getElementById()" is a way for us to access all of the information under a certain id in the HTML file and bring it to our Javascript. I used ".getElementById()" to get things like the options inside the dropdown menu and the words inside
+                the "--select--". The following is a picture of how I used ".getElementById()" to get all of the options within the dropdown menu.</p>
+            <img src="https://lh3.googleusercontent.com/eR3RyJyXDHfEz1PBjJ9sel6eLhFMRc7DXaU-RfEZg4LRtyJyD5CZRmpfYLKqDs4rysfGyxerR_B295fZ1X5542D6-52s15M3KSR3Z7lpxDWzGMoCnLmits4ztVAarScHyEp4InuG_L8qyV2zguIAPwyxfxrb6p-Zr6ztz8VV-W75fEVLh7P1X2lbSySVWZ6zHwlfgh4GItgHOP7r6bzPK0eCd9AZM9ywZiwXEAISiwveCKe5A7R7wcsrqKl1kW5IBt1rdyv0qTk1YqXSBEfiHEoqvMn3Mdx7b7dpDcCh52JgEnAOlBlzVQcJx5PoIPgWLd5i9TvP99Ir8Wt0o7ZEPfyOmY5w-POgX_YG-sFAZOO4Zydbhphz49zOhVnGFFmerSVpt1zFJYpDNLSRMMr-dGdLWIbRP94QWbAyZTM2dAlzSfyHUw--mahWPV5WzrAc7mV-rW6SmhB2ayaZV16yXKbTPTxEUYP49E1UIBT8JuIsxMRHnHMu-treQcsp7hkedrI0unUj4RmBomGSP15ES1xZKhWcJjpTvpqMFTTM6tu6veOyzZyI_UpUaVV_p2VbEIMmRj59vpanI6n3hPL9KdbIzyZMZcXagOEcDp8=w470-h152-no" width="320px" alt="code used to turn all elements into variables on my javascript">
+            <p>I put all of the "getElementById"'s on the top of my coding to keep it neat and avoid having to "getElementById" when I'm adding event listeners.
+            </p>
+        </div>
+        <div class="trio">
+            <h3>.addEventListener</h3>
+            <p>Event listeners "listen" for certain things the user can do. It is what allows the user to interact with our webpages. I used event listeners to allow the user to switch between different items to put onto the nature scene. Here is an image
+                of how I used event listeners to change what was drawn once the user clicked on an item in the dropdown<br></p>
+            <img src="https://lh3.googleusercontent.com/Y7aLolTYEa1UpjCbgAYE9I3O4cS6xWHJaGwl3Qzrh1q_R6Ng9MQ-LcRqSy9yfpLJ3hCqr8xEdNIkLdMAg-_Be5iIz3YQGsn8FOmEIEbzMIbvYKhQk_RUVPqJfqTEhaLKyhKeCb2mR8c2PjDQifU3ffUujgs1r8vSYzQDKE6jB_CjR1QodNt6lys3AJ9UV8RGtm2c5z5KWJ-KEQGbpH5uy4G0DrieF-lhd-nUmXPccu7r_m7RAHLE5QdzYsc8Ss6RHW2vaI907uzv2qTj1FegqtbZVwSWDCysVdr1-Xz0AHGTn2VOcALo-j9yLOUhK40513eI_NOHAGRWK8qBhfXtFguw-GlyfvjXYms1YdgC6kN4uO-XigVMArATt78f9jMYBImNfug8UnvkhUu5qrh_4GHQsNfeIYU6xByJR5VqYVbvBculR9Pt4pXvcCVEjO-Gc565mPZ311C2nDkxHVYrIqD75yYyzAFgwIFVkPclNr4Vo3tXxSFEta9Rof0HOJPvyJfPqJAXmO-whPMZNf-jMUQZ-6g1kb4SJyf32qY95BmNacIM6ldbojbLiarGQm3RGnfGnQQJU59MKSPfBXI0ftqfeKzvTRff7XXY98o=w395-h449-no" alt="image of the code I used to change the thing drawn when the user clicks on the dropdown menu" width="99%">
+        </div>
+        <div class="trio">
+            <h3>.innerHTML</h3>
+            <p>.innerHTML is the output of what the user inputs. Essentially, it allows one to change the appearance of the HTML on a page after a user clicks, moves their mouse, etc. I used .innerHTML to change "--select--" so it would be clear to the user
+                what the user picked. Here is an image of the code I used:</p>
+            <img src="https://lh3.googleusercontent.com/NOJtlsxmnNtk5Dr3TUK6-jCQqTPvsP0ZwpHnJQNBeEPJhtXNu0BLx28qostj6acNuU_y_7fc_MkHkQPfCrFpK4MGNHFy9Rf48U-RwGUa78Isg5vLOJElWWdTxjal3s-TWQUBoRLg8J4ymAkANCwwtyLN47EK8smF0BjHAbx-4Vj0B0kqqwYpNgSi_NXRuVOfGh2cP4B1jFF22y0ODiA1i5f6HOORzD2sAnaJ6LEb7T9YxNoEb47OK9Amu5EsNdVXvq1uC7iVR0xQw7zCpeTDMc-Szc5zqFJqyyAM6BlC1pNkbbhN4k-VVvO-XpKRyrwCZxkPY1cg1TisV2Cbb6D9npFaOjKu9Zi1MG2q_B-BAfgOW2WPzW9X4rMTPYBKOa5gyNPCZsapVxuHzO6-i0mEx1sagqB71scQAzwq7woAVBkgG553HixtWyEn9r1eXxQA6nCg0p1WFAOPNq8e8k857Cbgeo6OqFezN7ll7wURodVOpCyqiGrc6zqcnGZn_Kl-JD5NXT7Ky_ioxoOMHagKU3jDxyX8DMkxMRzFyRXAWqv8muC_JNOhmZukmiQrwO4LnAKePLdQXCOj0s4ngQz2ZwfHhC3Vybim0K7Ki8g=w540-h487-no" alt="code I used to change what was displayed on the dropdown" width="99%">
+        </div>
+    </div>
+    <div>
+        <h2>Choices Made and Why</h2>
+        <p class="special">For our interactive webpage, we had the choice of making whatever we wanted as long as we met the following requirments: .getElementById, user input, a resulting output, and a conditional or function. Here is an overview of what I did for each
+            requirement and why:</p>
+        <div class="duo">
+            <h3>.getElementById</h3>
+            <p>I used .getElementById to access aspects of the HTML and put it into the javascript. Using it didn't allow too much freedom nor creativity because it was a must in order to make an interactive webpage. In addition to getting each label/option
+                under the dropdown menu, I also used .getElementById to create the subsections and the main section of the dropdown menu. I put these at the top to keep the code neat and to avoid having to use getElementById over and over again in random
+                places in the code Here is an image of how I used .getElementById:</p>
+            <img src="https://lh3.googleusercontent.com/H0ro5j7VEajo2unWVUV50rx-n09ngST-JcrCJrU3HCkXw3U6As_JgwEsab4-MbDg_Wz2qGgMaJOaCIWlbCytzuDYaNZnSLFv60knSt0Q4ZftVU4Lh1B3nQaJA7srsdlf896EvspRbXBTQjInn6gcKAxmCIe9OQY5p42zRbe48MFpMbNZg9MpFCBu9Paw--taeewKyAnR_1ENjJzIArRqRvZXAQ_hLDaIafLWX0zT9r3EMNCiJ8w-ZnVt0IW6zkBRQcfVTKh9g9Du2R8NjhgvPCfQn4ayRTuIHPN96aTcO1cjxB_gagDE3JN25_3I2J8GPNZD8wHTR28qKkKhLsUaA0qgTqHKdeFlAvUE7Pm63Grh6ldVAMNl-puGzSLDlIwQ-c6ooiLBlZvNQthnn7cnZ55iPh_GBKtG1PZCZWTNi-q-wrMXKFkovpTtTd3UfPhJPiO8ceA8ogKGk12Pc28D-OvSj8R36UTEsUcJoFlGnnmoLl74PJ4ijNULolG1Qpkst7ykaX0qqvxHPc5lpwMjRI12KVAGjYpZK2LHvEIVvsXl2U9H4fi49OraYm9QUHFRFhdrvrjdblSj2rre_mEO0UvS4Q509U3JKcUcpm0=w522-h127-no" width="100%" alt="image of the code used to get elements by their id">
+        </div>
+        <div class="duo">
+            <h3>User Input</h3>
+            <p>The user input I used in my final product was all in the dropdown menu. The user would "input" or select the bug/flower of their choice, and, once it was selected the user would be able to click onto the generative art and have it appear.
+                I chose to make the dropdown menu as the user input to make sure that I was making something that any user could easily figure out what they were supposed to do without instruction. Here is a gif of how it works!</p>
+            <a href='https://photos.google.com/share/AF1QipMhVGjpvVO_c0fx_G2_SVg06UiPp1NPahlWUteOwl3vRMTbeQMAIt6x1xL4ymaLjQ?key=cm92WUcwRWJJeVg5UXRQWWRjSkFiNk45cXd2QW5R&source=ctrlq.org'>
+                <img src='https://lh3.googleusercontent.com/_56I5nIfO_CQP9Bjdj61AsiCwkqIF6izfZHHQ4PWymiM_VU0_9sgLcce4UCrqQ9meZNWzXY9fwHFL8tBXVPCLC9jyCcALLFcd-2AmrCY75Wi2w3Qyw72wKjuTK9u2Mg9VfptCjOdyg=w2400' width="440px" alt="gif of how I incorporated user input by allowing them to click on the dropdown"/>
+            </a>
+        </div>
+        <div class="duoBottom">
+            <h3>Resulting Output</h3>
+            <p>Once the user inputs something, then another thing must happen as a result! I decided to incorporate innerHTML changes. By making the "--select--" on the main dropdown change into what the user choses, it allowed the user to know and see what
+                they had chosen without having to blindly place it onto the canvas to find out. Here is an example of what it would look like if the user picked "dragonfly":</p>
+            <img src="https://lh3.googleusercontent.com/HpVagmMQq3Cj2xyS_eSQKMHVQtoOj1V9Y07GQ5mvCgd3phjWHr6HJDW2ZzlNVqdz2KclmJdwfYVBoui_AObAkwOXtgQnOoIRLOyqH3p4t2WR9ABCmOpvWINtD5LjWMmpi5ARiAX-caHQOK_x-QjAIvGIiaZOtp_bkdO5c817UjPLDgg74QZ37dpnr4oHxDguntRQEu5BS_8KYt3s945Og5xgMaKyTbG1op8H3w38c1ThSTRYgnGxTuYJPvPCTXrrc8qcTS8dOVkEIEC_wgujcvaVYh2OqezRrUrtTTNUz4SR2neUWyEy4gtmgX4lmQpuOsd1BMdULnpvUBz2uJnVZZCfF41y2VQ1als2PF9qDcgt59d46hspt3PG5YmwqTF79Qotf3MLxOz7BFxdGpltS5uORXJge5iFRTfK2g7FP2yZ8elDMhYLlemgdC0isOECFcTlXpkMmglu9Xju-ig-1nESsTxjaMzbfCOanWeNXp9GTYvJIV2cMqpx0HZWmtasKNvoa1GjSNs4LLyy6UN0n8gfvd7ZBftbwGmFkAtVaAmEq7OXVY8VLjt0UoGeFuWOqmBb2wCww-YOLBu4W4Y5O9CJxDuTxyWy5anbat4=w544-h238-no" width="100%" alt="image of an example that shows the user picking dragonfly and having it replace '--select--'"></img>
+        </div>
+        <div class="duoBottom">
+            <h3>Conditional/Function</h3>
+            <p>The final requirement was it needed a conditional or a function. I chose to use a conditional, or an if/else statement. I used an if/else statement to allow the user to be able to choose between different things to put onto the canvas through
+                the dropdown menu. Essentially, it would say "if user clicked 'dragonfly' then on click draw a dragonfly. here is the code I used to incorporate an if/else statement:</p>
+            <img src="https://lh3.googleusercontent.com/TZk2HXdpuFIB_OEybVmy_cEyXaPdwlGA9qv5FgT4X5HhVLg-16SG0VFWphGLfNIqGub__nPUWW6-QG_brYkSE-98IFofrDOB5-H-LI3gTUtGmz2ETR7t8c412cnLKSf-jsu6HRPHslOR6HEm0rMAmr6OsDwFfFEzXRllF1GnjwTrIIubxSuCqIFr7wIpInhZl2SHrHSFDEN_Y3Y5p_JTApxrhk-Ui1ujJh87yEvQ8_IM_JjROea_-LyPp3kijZnVWnCJ1qSc-AnE4yBQBI-7127bBKJE1ezGZ-34uLYSjMH6uwyG14e1jJHK58_HBPcsYa_ACLDM76ONiJPKatG0sYjIGIBWZsKokzkQEqzGNWZi63NdLFl5D_by1R0nddv9lVIQuBHrPEOBqCUE5GmT0tv2c4Je2UnsiwU4pwmQ4Gyj9_RzO8VszHn8zMV3NikI6h80Md7RCmB2iBZpg_UwtdpKoS3Tc2lWwMk3--6M8-nodXrOQW8NiLQizCjA8ZRw1Fzd4u6gRQw6X0XCmt-TtagvxaY2qirFGJPSLPePHJdn_3pfG4VzJ4CYGu559D-y_Fb7GeJoOVrOXp9aPwYWiUUzCwIQqldX3Y4fynk=w452-h259-no" alt="image of the if/else statements that went into my interactive art">
+            <p>I chose to use if/else statements to make sure that only one array (either of dragonflies, ladybugs, flowers, or butterflies) would run at once.</p>
+        </div>
+    </div>
+    <div>
+        <h2>Something to Remember</h2>
+        <p class="special">One of my favorite parts of this class so far has been making art with programming. For this reason, I wanted to take this project as an opportunity to improve my old generative art. Although exciting, it presented many challenges. Going into
+            this project, I had no idea how to incorporate a canvas that uses processing with javascript, CSS, and HTML. In order to continue using all of these elements together with art, here are some things I will make sure to remember.</p>
+        <div class="steps">
+            <h3>Where do we ".getElementByID"? The canvas? The Javascript?</h3>
+            <p>This was one of the most challenging parts of this project because, in order to start, I needed to know where to get the elements by their id. Over the course of this project I learned that, first, you cannot use ".getElementById" inside the canvas because
+            the inside of the canvas is mainly processing. That being said, you can use ".getElementById" outside the canvas (above and below it). Because my project required two javascript files for the purposes of organization, I didn't use ".getElementById" on my canvas file,
+            but it is definitely useful for the future.</p>
+        </div>
+        <div class="steps">
+            <h3>How do we troubleshoot?</h3>
+            <p>My interactive art required a lot of components and, therefore, opportunities for mistakes. When I was putting the different components together, a lot of the times it would freeze or the background wouldn't show up etc. This is where <em><strong>alert();</strong></em> comes in.
+            In some cases, when the dragonfly/flower/butterfly/ladybug wouldn't show up, I would put "alert();" at the top of the mouseClicked function and, if an alert showed, I would know that for sure the mouseClicked function was being called, and working. That narrowed down the 
+            problem being something inside the mouseClicked function that was either called in it or drawn in it. A limitation to this, however, is that this mainly works for only javascript and processing as far as I know, and I personally do not know a way of testing why an image isn't loading in HTML using "alert();". 
+            The following images show the code I used to troubleshoot:</p>
+            <img src="https://lh3.googleusercontent.com/YzaaPN5tejdTniVUWzHShgbIXlKRfVU1MHbzQvkYlkO22aK_BxazbNPN9PGrJ_2cZqZlItD5-qGgYXNEdXFiOe1JScgdWi35kUYZGSVvdOiQb1WBDpGA0nsXT6lYjg2VUMgY3xcIj9J3Pet-A4-k3mCjPA5RyLZGm3b-Kg-Akh7ouJqep4qX4qIIAFr0qOMjq1HZniBZSIJ0r_elYg6SuAbH5AczKA76Mb7SQn49paiI6T07vhq_SL0mcJaoyRsdl27jyS1VDAphaOzun_0TMD6jiB2UiYaQo6GimNG3zxtmjIUfD8UxR9YZP4sq6uw55H28FrEo_CEokFsbz5coNAOMNBQSSSNgM7l1bZ98tNcQDwLW0Q3EAsmw2syd_dzIC-bsCwt6I-rMycleJzxMm3e97Qn37Rh5bHnDOCzTsihBweDsk5xvp7nd3HSVQyKLV-NoHwHj4jsJOMYIkXMs2-x9Oc06DuP0FxyNF3nqlVaUrUvadngt_2sEjNydbuSWlfgzlntyNBpcvsQGx9pkOPVd2Qz4uJNsgbvEFoQAXTd_dHgQjwO6C_JUtGX52GndGI248hjIgzga0BZiSu_34K4kZZageasTnQC2GAI=w439-h271-no" width="47%" alt="image of the code used to troubleshoot"/>
+            <img src="https://lh3.googleusercontent.com/rGE3IGWZgtUyopn0Q66VXjcDsK2EleuO7jTNA3Gkg45xh5uUtM22FW3LyDcwoNdWs4lZH8iMbo3SUDSAW_bda6N8wKhZgnEU5bRzZt-fT2jptgJ4lbveW97x50NZOo84lqAVir_hCWK0JypRqEj7HOirLQFduUc96yOMzxUAC5p9wVRqfMoVPRsoKVsLoH3yYPsJoTp3TAT_8QfcM73QZQs8nDjxgNjHZR4wBr1uoar7wTc2YbIBM3EBXZCAPWt91e1gYLejE11BXQ2Gvsr0WK3fTuc51dRP_hv2ZQBeqGbW1F6P19_sj6nGYbep0cki4s-CWbreJvMkEVXmv3DloXMl9hUFbcxsmONbhsT4x7_JyJ05mHXaQQB5YsldyWNRrJUsBMiakVO5kJuhFwIzhCiu2xZLbr4Zk9dUeaskVb7aIGbz07sR8ELm83KB5vxEZIufDmUxTwq1GAqF2SWD9OhQnRfjMQHytrGwOqkjkAOOOGxBQbpfyMui8RGSsBtlbYl-ltJ9JKhCQTiOiKFTcahs7n_5pzR1HAPNJujMF0gt2EyO55Yef6XxxnsnFZGylwFNYllMSzT4JGO-cAfZGsx6C9nWzC9n1uRBuWg=w568-h346-no" width="47%" alt="outcome of 'alert();'"/>
+        </div>
+    </div>
+    <div>
+        <h2>Next Steps</h2>
+        <p class="special">If I had more time, I would add more things for the user to pick from, and I would allow the user to pick from a night/day selector (that would change the colors to match night or day). I would also consider making different environment backgrounds
+            so the user could pick between other options like the ocean, beach, forest, etc. Something I would like to try is making buttons with images in them. For example, having a ladybug button that has a ladybug on it, and to do this I would probably
+            make a separate version. Additionally, if I had more time to change something, I would rescale the dragonfly because I think it is a little too big. A final thing that I would do to improve my interactive art is that I would change the layering of 
+            the different things you can place onto the nature scene (ex: flowers on the bottom, then ladybugs, then dragonflies/butterflies. (see my<a href="index.html">"about me"</a> page to see how this project/interval has changed my understanding of what it means to <strong>"interact"</strong> with something</p>
+    </div>
+
+    <script type="text/javascript" src="int3project/dropdown.js"></script>
+    <script src="int2checkpoints/processing.min.js"></script>
+    <script src="int3project/int3proj.js"></script>
+</body>
+
+</html>

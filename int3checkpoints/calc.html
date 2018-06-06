@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="indexstylesheet.css" type="text/css">
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            background-image: url("elephants.jpg"); 
+        }
+        input {
+            border: inset;
+            padding: 3px;
+            margin-top: 4px;
+        }
+        button, select{
+            border: inset;
+        }
+        #displayNew {
+            background-color: white;
+            width: 520px;
+            text-align: right;
+            border: inset;
+            display: block;
+            margin: 3px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #outside {
+            border: 5px solid #424242;
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 200px;
+        }
+        .main #about{
+            list-style: none;
+            transition:3s;
+            color: #424242;
+            font-size: 3em;
+            font-family: garamond;
+            text-align: center;
+            display: block;
+            margin-left: 30%;
+            margin-right: 50%;
+        }
+
+        .main:hover li{
+            transform: rotatey(360deg);
+        }
+    </style>
+</head>
+<body style="background-image: url(images/elephants.jpg)">
+    <div id="outside" style="background-color: #53BC84">
+        <div class="main"> 
+            <ul> 
+                <li align="center" id="about"><strong>calculator</strong></li>
+            </ul>
+        </div>
+        <div id="displayNew" style="padding-right: 3px">Answer</div>
+        <input id="num1">
+            <select id="operator">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+                <option>^</option>
+            </select>
+        <input id="num2">
+        <button id=calculate>calculate</button>
+    </div>
+    <script type="text/javascript" src="calc.js"></script>
+</body>
+</html>

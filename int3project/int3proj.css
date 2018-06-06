@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+#output-canvas {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+#mainButton {
+    display: inline-block;
+    background-color: #53BC84;
+    width: 140px;
+    height: 25px;
+    text-align: center;
+    vertical-align: top;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+#table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+#mainButton p {
+    display: table-cell;
+    vertical-align: middle;
+    width: 114px;
+    height: 100%;
+}
+
+#mainDropdown {
+    /*display: none;*/
+    background-color: #77d1a1;
+    /*just in case there is a really large word*/
+    min-width: 14px; 
+    z-index: 1;
+    margin: 0; 
+    padding: 5px; 
+}
+
+#sub-dropdownFlower, #sub-dropdownButterfly {
+    z-index: 2;
+    background-color: #77d1a1;
+    text-align: left;
+    padding: 5px; 
+}
+
+#mainButton ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mainDropdown li {
+    text-align: left;
+    padding: 2px 5px;
+}
+
+#mainDropdown li:hover {
+    background-color: #b4e8cc;
+}
+

@@ -40,8 +40,8 @@ draw = function() {
 
 function ladybug(x, y, angle) {
     
-    pushMatrix();//sets (0, 0) to mouse
-    translate(x, y);
+    pushMatrix();//backups current display matrix
+    translate(x, y);//sets (0, 0) to mouse
     rotate(angle); //assigns random angle to rotate at
     
     //ladybug
@@ -62,11 +62,12 @@ function ladybug(x, y, angle) {
     triangle(0+5, 0+39, 0-5, 0+40, 0, 0-40);//inside
     
     //ladybug's antennas
-    noFill();
-    stroke(0, 0, 0);
-    strokeWeight(1);
-    bezier(0-13, 0-51, 0-40, 0-119, 0-47, 0-51, 0-35, 0-62);//left 
-    bezier(0+13, 0-51, 0+40, 0-119, 0+47, 0-51, 0+35, 0-62);//right
+        noFill();
+        stroke(0, 0, 0);
+        strokeWeight(1);
+        bezier(0 - 13, 0 - 51, 0 - 40, 0 - 119, 0 - 47, 0 - 51, 0 - 35, 0 - 62); //left 
+        bezier(0 + 13, 0 - 51, 0 + 40, 0 - 119, 0 + 47, 0 - 51, 0 + 35, 0 - 62); //right
+    
    
     popMatrix(); //resets everything back to top left corner being (0, 0)
 }

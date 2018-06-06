@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Interactive</title>
+        <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
+        <link rel="stylesheet" href="int3proj.css" type="text/css">
+    </head>
+    
+    <body>
+        <canvas id="output-canvas"></canvas>
+
+        <div id="mainButton">
+            <div id="table">
+                <p><span id="output">--select--</span> &#x25BC;</p>
+                <ul id="mainDropdown">
+                    <li id="ladybug"><p>ladybug</p></li>
+                    <li id="dragonfly"><p>dragonfly</p></li>
+                    <li id="butterfly">
+                        <p>butterfly &#9658;</p>
+                        <ul id="sub-dropdownButterfly">
+                            <li id="orangeButterfly">orange-yellow</li>
+                            <li id="pinkButterfly">pink-purple</li>
+                        </ul>
+                    </li>
+                    <li id="flower"> 
+                        <p>flower &#9658;</p>
+                        <ul id="sub-dropdownFlower">
+                            <li id="whiteFlower">white</li>
+                            <li id="pinkFlower">pink</li>
+                            <li id="darkFlower">dark pink</li>
+                            <li id="violetFlower">violet</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="dropdown.js"></script>
+        <script src="../int2checkpoints/processing.min.js"></script>
+        <script src="int3proj.js"></script>
+    </body>
+</html>
+  
